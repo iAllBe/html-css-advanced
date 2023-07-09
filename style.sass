@@ -207,20 +207,21 @@ li
     &__slider
         position: relative
 
-        &-slider__image
+    .product-slider
+        &__image
             display: flex
             justify-content: center
             align-items: center
             padding-bottom: 60px
 
-            &-slider__nav
-                position: absolute
-                top: 50%
-                background-color: #2A2A2A26
-                display: flex
-                justify-content: center
-                align-items: center
-                cursor: pointer
+        &__nav
+            position: absolute
+            top: 50%
+            background-color: #2A2A2A26
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
 
             svg
                 fill: #000000
@@ -230,11 +231,11 @@ li
                 svg
                     fill: $siteColorPink
 
-            &-slider__nav_next
-                right: 0
+        &__nav_next
+            right: 0
 
-            &-slider__nav_prev
-                left: 0
+        &__nav_prev
+            left: 0
 
     &__desc
         border: 1px solid #EAEAEA
@@ -247,56 +248,57 @@ li
         margin: -50px auto 40px
         background-color: white
 
-        &-desc__name-collection
-            color: $siteColorPink
-            font-family: Lato
-            font-weight: 300
-            position: relative
-            padding-bottom: 27px
+.product-desc
+    &__name-collection
+        color: $siteColorPink
+        font-family: Lato
+        font-weight: 300
+        position: relative
+        padding-bottom: 27px
 
-            &::after
-                content: ""
-                position: absolute
-                display: block
-                width: 63px
-                height: 3px
-                background-color: #EF5B70
-                bottom: 12px
-                left: 50%
-                transform: translateX(-50%)
+        &::after
+            content: ""
+            position: absolute
+            display: block
+            width: 63px
+            height: 3px
+            background-color: #EF5B70
+            bottom: 12px
+            left: 50%
+            transform: translateX(-50%)
 
-            &-desc__title
-                color: #4D4D4D
-                font-size: 18px
-                font-weight: 300
-                margin-bottom: 48px
+    &__title
+        color: #4D4D4D
+        font-size: 18px
+        font-weight: 300
+        margin-bottom: 48px
 
-            &-desc__desc
-                color: #5E5E5E
-                text-align: center
-                font-weight: 300
-                margin-bottom: 32px
+    &__desc
+        color: #5E5E5E
+        text-align: center
+        font-weight: 300
+        margin-bottom: 32px
 
-            &-desc__price
-                color: #EF5B70
-                font-size: 24px
-                font-weight: 300
-                margin-bottom: 65px
+    &__price
+        color: #EF5B70
+        font-size: 24px
+        font-weight: 300
+        margin-bottom: 65px
 
-            &-desc__delimiter
-                width: 100%
-                height: 1px
-                background-color: #EAEAEA
-                margin-bottom: 65px
+    &__delimiter
+        width: 100%
+        height: 1px
+        background-color: #EAEAEA
+        margin-bottom: 65px
 
-            &-desc__form
-                &-desc-form__params
-                    display: flex
-                    gap: 42px
-                    margin-bottom: 48px
+.product-desc-form
+    &__params
+        display: flex
+        gap: 42px
+        margin-bottom: 48px
 
-                    &-desc-form-params__item
-                        color: #6F6E6E
+.product-desc-form-params__item
+    color: #6F6E6E
 
 .button
     color: #F26376
@@ -377,11 +379,11 @@ li
         padding: 15px 39px
         border: 1px solid #FF6A6A
 
-    &-page
-        padding-top: 48px
-        padding-bottom: 60px
-        display: flex
-        flex-direction: column
+.catalog-page
+    padding-top: 48px
+    padding-bottom: 60px
+    display: flex
+    flex-direction: column
 
     &__sorting
         padding-bottom: 65px
@@ -394,24 +396,21 @@ li
         margin-bottom: 48px
         justify-content: center
 
-    &-page-sorting-wrapper
-        width: 360px
-        position: relative
-
-    &-page-sorting__filter
+    &__filter
         position: absolute
 
-    &[open]
-        background: #FFF
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
-        padding: 13px 16px 16px
+        &[open]
+            background: #FFF
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+            padding: 13px 16px 16px
 
-    &[open] &-page-details__title
-        color: $siteColorPink
+        &[open] &-page-details__title
+            color: $siteColorPink
 
-    &[open] path
-        fill: $siteColorPink
+        &[open] path
+            fill: $siteColorPink
 
+.catalog-page-details
     &__summary
         display: flex
         gap: 11px
@@ -420,16 +419,18 @@ li
     &__title
         font-weight: 600
 
-    &-page-subdetails
+    &__page-subdetails
         display: flex
         flex-direction: column
 
-    &__subsummary
-        padding: 11px
-        border-bottom: 1px solid #EBEBEB
-        border-left: 5px solid $siteColorPink
-        margin-top: 16px
-
+        &__subsummary
+            padding: 11px
+            border-bottom: 1px solid #EBEBEB
+            border-left: 5px solid $siteColorPink
+            margin-top: 16px
+.catalog-page-sorting-wrapper
+    width: 360px
+    position: relative
 .subsummary-title
     color: $siteColorPink
 
@@ -879,6 +880,38 @@ li
         flex-direction: column
         gap: 60px
 
+    .product
+        &__desc
+            margin: 0 auto
+            border-left: none
+            border-right: none
+            width: 100%
+    .catalog-content
+        &__item:last-child
+            display: none
+
+    .catalog-page
+        &__content
+            grid-template-columns: repeat(2, 1fr)
+
+    .catalog-page-content__item:last-child
+        display: none
+    .cart
+        display: flex
+        flex-direction: column
+
+    .shopping-control
+        justify-content: space-around
+
+    .cart
+        &__left-col
+            margin-bottom: 65px
+        &__right-col
+            flex-direction: row
+            width: 100%
+            justify-content: space-between
+    .cart-form
+        width: 360px
 @media (max-width: 767px)
     .center
         padding-left: calc(50% - 310px/2)
@@ -891,7 +924,7 @@ li
     .profile
         display: none
 
-    .cart
+    .cart-site
         display: none
 
     .slider
@@ -960,3 +993,103 @@ li
         flex-direction: column-reverse
         gap: 40px
         padding-top: 40px
+
+    .breadcrumbs
+        display: flex
+        flex-direction: column
+        gap: 30px
+        padding-top: 25px
+        padding-bottom: 45px
+
+    .product
+        &__desc
+            width: 100%
+            padding-left: 5px
+            padding-right: 5px
+
+    .catalog-content
+        &__item:last-child
+            display: none
+    .catalog-page
+        &__content
+            grid-template-columns: repeat(1, 1fr)
+            padding-left: 5px
+            padding-right: 5px
+    .catalog-page-details
+        font-size: 0
+        &__summary
+            gap: 5px
+            svg
+                width: 38px
+                height: 25px
+    .catalog-page-sorting
+        &__params
+            font-size: 12px
+            gap: 20px
+            padding-left: 10px
+    .catalog-page-sorting-wrapper
+        width: auto
+    .catalog-page-sorting-params-summary
+        gap: 5px
+    .cart
+        display: flex
+        flex-direction: column
+
+    .shopping-control
+        justify-content: space-around
+
+    .cart
+        padding-top: 40px
+        &__left-col
+            margin-bottom: 65px
+            padding-left: 5px
+            padding-right: 5px
+        &__right-col
+            width: 100%
+            justify-content: space-between
+            padding-left: 5px
+            padding-right: 5px
+    .cart-form
+        width: 360px
+
+    .card-product
+        &__image
+            width: 40%
+        &__desc
+            width: 60%
+            padding: 10px 30px 10px 10px
+        &__desc-title
+            font-size: 16px
+            margin-bottom: 10px
+        &__desc-price
+            font-size: 14px
+        &__desc-color
+            font-size: 14px
+        &__desc-size
+            font-size: 14px
+        &__desc-quant
+            font-size: 14px
+        &__desc-input
+            font-size: 14px
+            height: 16px
+    .button-close
+        top: 15px
+        right: 10px
+        svg
+            width: 10px
+            height: 10px
+
+    .shopping-control
+        margin-top: 40px
+        &__button
+            padding: 10px 15px
+            font-size: 12px
+            text-transform: lowercase
+            display: flex
+            align-items: center
+    .cart-form
+        width: auto
+    .cart-total
+        &__button
+            font-size: 14px
+            padding: 15px 20px
